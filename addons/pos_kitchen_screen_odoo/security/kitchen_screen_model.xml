@@ -4,7 +4,7 @@
         <record id="model_x_kitchen_screen" model="ir.model">
             <field name="name">x_kitchen.screen</field>
             <field name="model">x_kitchen.screen</field>
-            <!-- <field name="state">manual</field> -->
+            <field name="state">manual</field>
         </record>
     </data>
 </odoo>

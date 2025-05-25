@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--Kitchen screen menu item    -->
+    <!-- Menú raíz bajo Punto de Venta -->
     <menuitem id="pos_kitchen_screen_menu_root"
-              name="Pos kitchen screen 1"
+              name="Pantalla de Cocina"
               parent="point_of_sale.menu_point_root"
-              sequence="10"/>
+              sequence="100"/>
 
-    <menuitem id="pos_kitchen_screen_menu_action"
-              name="Pos kitchen screen 2"
+    <!-- Menú a la acción del dashboard OWL -->
+    <menuitem id="pos_kitchen_dashboard_menu"
+              name="Dashboard de Cocina"
               parent="pos_kitchen_screen_menu_root"
-              action="kitchen_screen_action"
-              sequence="10"/>
+              action="kitchen_custom_dashboard_action"
+              sequence="1"/>
+
+    <!-- Acción de cliente que activa tu OWL -->
+    <record id="kitchen_custom_dashboard_action" model="ir.actions.client">
+        <field name="name">Dashboard de Cocina</field>
+        <field name="tag">kitchen_custom_dashboard_tags</field>
+        <field name="target">fullscreen</field>
+    </record>
 </odoo>

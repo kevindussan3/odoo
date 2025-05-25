@@ -25,12 +25,13 @@
     'depends': ['web','pos_restaurant'],
     'data': [
         'security/pos_kitchen_screen_groups.xml',
+        'views/pos_kitchen_screen_odoo_menus.xml',
         'security/kitchen_screen_model.xml',
+        'data/ir_sequence.xml',
         "security/ir.model.access.csv",
         'data/kitchen_screen_data.xml',
         "data/sequence_data.xml",
         "views/kitchen_screen_views.xml",
-        "views/pos_kitchen_screen_odoo_menus.xml",
         "views/pos_order_views.xml",
     ],
     'assets': {
@@ -42,6 +43,7 @@
         'web.assets_backend': [
             'pos_kitchen_screen_odoo/static/src/css/kitchen_screen.css',
             'pos_kitchen_screen_odoo/static/src/js/kitchen_screen.js',
+            'pos_kitchen_screen_odoo/static/src/js/kitchen_screen_dashboard.js',
             'pos_kitchen_screen_odoo/static/src/xml/kitchen_screen_templates.xml',
             'https://code.jquery.com/jquery-1.10.2.min.js',
             'https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js',

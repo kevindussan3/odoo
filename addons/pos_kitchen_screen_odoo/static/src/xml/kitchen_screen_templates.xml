@@ -22,7 +22,7 @@
                                         </div>
                                         <span class="draft draft_stage"
                                               t-on-click="(e) => this.draft_stage(e)">
-                                            Cooking
+                                            Cocinando
                                         </span>
                                         <t t-if="state.draft_count > 0">
                                             <span class="ms-2 px-2 fw-bold rounded kitchen_order_count">
