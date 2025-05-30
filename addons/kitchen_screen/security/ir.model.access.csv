@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_x_kitchen_screen,access to x_kitchen_screen,model_x_kitchen_screen,,1,1,1,1

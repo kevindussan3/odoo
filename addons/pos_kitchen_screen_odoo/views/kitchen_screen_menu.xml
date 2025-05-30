@@ -1,7 +1,0 @@
-<odoo>
-  <menuitem id="menu_kitchen_root" name="Cocina"/>
-  <menuitem id="menu_kitchen_screen"
-            name="Pantallas de Cocina"
-            parent="menu_kitchen_root"
-            action="action_kitchen_screen"/>
-</odoo>
