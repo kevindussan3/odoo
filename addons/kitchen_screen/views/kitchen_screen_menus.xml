@@ -19,13 +19,28 @@
             <field name="target">fullscreen</field>
         </record>
 
+        <record id="action_kitchen_screen_config" model="ir.actions.act_window">
+            <field name="name">Configuración de Pantallas de Cocina</field>
+            <field name="res_model">kitchen.screen</field> <field name="view_mode">list,form</field> <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea y gestiona tus configuraciones de pantalla de cocina aquí.
+                </p>
+            </field>
+        </record>
+
         <menuitem id="pos_kitchen_screen_menu_root"
                   name="Pantalla de Cocina"
                   parent="point_of_sale.menu_point_root"
-                  sequence="100"/> <menuitem id="pos_kitchen_dashboard_menu"
+                  sequence="100"/>
+
+        <menuitem id="pos_kitchen_dashboard_menu"
                   name="Dashboard de Cocina"
                   parent="pos_kitchen_screen_menu_root"
                   action="kitchen_custom_dashboard_action"
-                  sequence="1"/>
-    </data>
+                  groups="kitchen_screen.group_kitchen_cook" sequence="1"/>
+
+        <menuitem id="menu_kitchen_screen_config"
+                  name="Configuración de Pantallas"
+                  parent="pos_kitchen_screen_menu_root"
+                  action="action_kitchen_screen_config" sequence="2"/> </data>
 </odoo>

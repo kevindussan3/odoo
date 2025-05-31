@@ -38,9 +38,10 @@ class kitchen_screen_dashboard extends Component {
             session_shop_id = sessionStorage.getItem('shop_id');
             this.shop_id = parseInt(session_shop_id, 10);;
         }
-        console.log("SHOP ID:", this.shop_id);
+        console.log("SHOP ID 000:", this.shop_id);
 
         self.orm.call("pos.order", "get_details", ["", self.shop_id,""]).then(function(result) {
+            console.log("Result:", result);
             self.state.order_details = result['orders']
             self.state.lines = result['order_lines']
             self.state.shop_id=self.shop_id

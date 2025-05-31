@@ -24,7 +24,7 @@ Long description of module's purpose
  'data': [
         'security/kitchen_screen_groups.xml',
         "security/ir.model.access.csv",
-        # 'data/kitchen_screen_sequence_data.xml',
+        'data/sequence_data.xml',
         "views/kitchen_screen_views.xml",
         "views/kitchen_screen_menus.xml",
         "views/pos_order_views.xml",
