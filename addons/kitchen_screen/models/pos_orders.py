@@ -83,7 +83,7 @@ class PosOrder(models.Model):
             if orders:
                 orders.lines = False
                 orders.lines = dic[0]['lines']
-        kitchen_screen = self.env["x_kitchen.screen"].sudo().search(
+        kitchen_screen = self.env["kitchen.screen"].sudo().search(
             [("pos_config_id", "=", shop_id)])
         pos_orders = self.env["pos.order.line"].search(
             ["&", ("is_cooking", "=", True),
@@ -119,7 +119,7 @@ class PosOrder(models.Model):
         """Supering the action_pos_order_paid function for setting its kitchen
         order and setting the order reference"""
         res = super().action_pos_order_paid()
-        kitchen_screen = self.env["x_kitchen.screen"].search(
+        kitchen_screen = self.env["kitchen.screen"].search(
             [("pos_config_id", "=", self.config_id.id)]
         )
         for order_line in self.lines:
@@ -153,7 +153,7 @@ class PosOrder(models.Model):
 
     def order_progress_change(self):
         """Calling function from js to change the order status"""
-        kitchen_screen = self.env["x_kitchen.screen"].search(
+        kitchen_screen = self.env["kitchen.screen"].search(
             [("pos_config_id", "=", self.config_id.id)])
         stage = []
         for line in self.lines:
@@ -171,7 +171,7 @@ class PosOrder(models.Model):
         """Calling function from js to know status of the order"""
         pos_order = self.env['pos.order'].sudo().search(
             [('pos_reference', '=', str(order_name))])
-        kitchen_order = self.env['x_kitchen.screen'].sudo().search(
+        kitchen_order = self.env['kitchen.screen'].sudo().search(
             [('pos_config_id', '=', pos_order.config_id.id)])
         if kitchen_order:
             for category in pos_order.lines.mapped('product_id').mapped(
@@ -192,7 +192,7 @@ class PosOrder(models.Model):
         "Update order status"
         pos_order = self.env['pos.order'].sudo().search(
             [('pos_reference', '=', str(order_name))])
-        kitchen_order = self.env['x_kitchen.screen'].sudo().search(
+        kitchen_order = self.env['kitchen.screen'].sudo().search(
             [('pos_config_id', '=', pos_order.config_id.id)])
         for category in pos_order.lines.mapped('product_id').mapped(
                 'pos_categ_ids').mapped('id'):

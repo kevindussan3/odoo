@@ -21,15 +21,12 @@ Long description of module's purpose
     'depends': ['web','pos_restaurant'],
 
     # always loaded
-    'data': [
+ 'data': [
+        'security/kitchen_screen_groups.xml',
         "security/ir.model.access.csv",
-        'security/pos_kitchen_screen_groups.xml',
-        'views/pos_kitchen_screen_odoo_menus.xml',
-        'security/kitchen_screen_model.xml',
-        # 'data/ir_sequence.xml',
-        'data/kitchen_screen_data.xml',
-        # "data/sequence_data.xml",
-        # "views/kitchen_screen_views.xml",
+        # 'data/kitchen_screen_sequence_data.xml',
+        "views/kitchen_screen_views.xml",
+        "views/kitchen_screen_menus.xml",
         "views/pos_order_views.xml",
     ],
     'assets': {

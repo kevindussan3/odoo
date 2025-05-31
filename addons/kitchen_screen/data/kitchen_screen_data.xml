@@ -3,7 +3,7 @@
     <data noupdate="1">
         <record id="kitchen_screen_sequence" model="ir.sequence">
             <field name="name">Kitchen Screen</field>
-            <field name="code">x_kitchen.screen</field>
+            <field name="code">kitchen.screen</field>
             <field name="active">True</field>
             <field name="prefix">KITCHEN</field>
             <field name="padding">4</field>

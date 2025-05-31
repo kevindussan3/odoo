@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="module_category_kitchen_screen_pos" model="ir.module.category">
+            <field name="name">Pantalla Cocina POS</field>
+            <field name="description">Grupos de acceso para cocina</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="group_kitchen_cook" model="res.groups">
+            <field name="name">Cocinero</field>
+            <field name="category_id" ref="kitchen_screen.module_category_kitchen_screen_pos"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            </record>
+
+        <record id="kitchen_custom_dashboard_action" model="ir.actions.client">
+            <field name="name">Dashboard de Cocina</field>
+            <field name="tag">kitchen_custom_dashboard_tags</field>
+            <field name="target">fullscreen</field>
+        </record>
+
+        <menuitem id="pos_kitchen_screen_menu_root"
+                  name="Pantalla de Cocina"
+                  parent="point_of_sale.menu_point_root"
+                  sequence="100"/> <menuitem id="pos_kitchen_dashboard_menu"
+                  name="Dashboard de Cocina"
+                  parent="pos_kitchen_screen_menu_root"
+                  action="kitchen_custom_dashboard_action"
+                  sequence="1"/>
+    </data>
+</odoo>
